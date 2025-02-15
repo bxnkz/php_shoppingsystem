@@ -46,9 +46,9 @@ if (!empty($_GET['id'])) {
             <?php if ($rows > 0) : ?>
                 <?php while ($product = mysqli_fetch_assoc($query)) : ?>
                     <div class="col-3 mb-3">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem; height:100%">
                             <?php if (!empty($product['profile_image'])) : ?>
-                                <img  src="<?php echo $base_url; ?>/upload_image/<?php echo $product['profile_image'] ?>" width="100" alt="Image" class="card-img-top">
+                                <img  src="<?php echo $base_url; ?>/upload_image/<?php echo $product['profile_image'] ?>" width="100" height="100%" alt="Image" class="card-img-top">
                             <?php else : ?>
                                 <small><?php echo 'No Image'; ?></small>
                             <?php endif; ?>

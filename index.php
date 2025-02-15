@@ -2,6 +2,11 @@
 session_start();
 include 'config.php';
 
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: ' . $base_url . '/product_list.php');
+    exit;
+}
+
 $query = mysqli_query($conn, "SELECT * FROM products");
 $rows = mysqli_num_rows($query);
 
